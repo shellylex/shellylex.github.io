@@ -1,115 +1,266 @@
-@font-face {
-    font-family: PROLOGIK; 
-    src: url("fonts/PROLOGIK.woff") format("woff");
-	font-weight: normal;
-	font-style: normal;
-}
-@font-face {
-    font-family: IBMPlexMono; 
-    src: url("fonts/IBMPlexMono-MediumItalic.woff") format("woff");
-	font-weight: normal;
-	font-style: italic;
-}
+			/* user styles */
 
-@font-face {
-    font-family: IBMPlexMono; 
-    src: url("fonts/IBMPlexMono-Medium.woff") format("woff");
-	font-weight: normal;
-	font-style: normal;
-}
+            /* styles are what change the color and sizes of stuff on your site. */
 
-@font-face {
-    font-family: PixelOperator; 
-    src: url("fonts/PixelOperator.woff") format("woff");
-	font-weight: normal;
-	font-style: normal;
-}
+            /* these are variables that are being used in the code
+    these tended to confuse some people, so I only kept 
+    the images as variables */
 
+            :root {
+                --header-image: url('pictures/okLetters.jpg');
+                --body-bg-image: url('pictures/testBG.gif');
 
+                /* colors */
+                --content: #ffffff;
+            }
 
-nav ul {
+            /* if you have the URL of a font, you can set it below */
+            /* feel free to delete this if it's not your vibe */
 
-	list-style-type:none;
-	
-	text-align: center;
-}
+            /* this seems like a lot for just one font and I would have to agree 
+    but I wanted to include an example of how to include a custom font.
+    If you download a font file you can upload it onto your Neocities
+    and then link it! Many fonts have separate files for each style
+    (bold, italic, etc. T_T) which is why there are so many!
+    
+    */
 
-nav li a{
-	
-	background-color: #1C1C1C;
-	
-	padding: 6px;
-	color: #FFFFFF;
-	
-	
-	text-decoration:none;
-	font-family: IBMPlexMono;
-}
+            @font-face {
+                font-family: PixelOperator;
+                src: url('fonts/PixelOperator.woff');
+				font-weight: normal;
+				font-style: normal;
+            }
 
-nav li a:hover{
+            @font-face {
+                font-family: IBMPlexMono-Medium;
+                src: url('fonts/IBMPlexMono-Medium.woff');
+                font-weight: normal;
+				font-style: normal;
+			}
+
+            @font-face {
+                font-family: IBMPlexMono-Medium;
+                src: url('fonts/IBMPlexMono-MediumItalic.woff');
+				font-weight: normal;
+				font-style: italic;
+            }
 
 
-	padding: 6px;
-	color: white;
+            body {
+                font-family: 'PixelOperator';
+                margin: 0;
+                background-color: #ffffff;
+                /* you can delete the line below if you'd prefer to not use an image */
+                background-size: cover;
+                
+                background-image: var(--body-bg-image);
+				background-attachment: fixed;
+				
+				
+				
+            }
 
-	background-color: black;
-	text-decoration:none;
-	font-family: IBMPlexMono;
-}
+            * {
+                box-sizing: border-box;
+            }
+
+            /* below this line is CSS for the layout */
+
+            /* this is a CSS comment
+    to uncomment a line of CSS, remove the * and the /
+    before and after the text */
+
+
+            /* the "container" is what wraps your entire website */
+            /* if you want something (like the header) to be Wider than
+    the other elements, you will need to move that div outside
+    of the container */
+            #container {
+                max-width: 1000px;
+                /* this is the width of your layout! */
+                /* if you change the above value, scroll to the bottom
+      and change the media query according to the comment! */
+                margin: 0 auto;
+                /* this centers the entire page */
+            }
+
+            /* the area below is for all links on your page
+    EXCEPT for the navigation */
+            #container a {
+                
+                font-weight: bold;
+				text-decoration:none;
+            }
+
+            #header {
+                width: 100%;
+                background-color: transparent;
+                /* header color here! */
+                height: 280px;
+                /* this is only for a background image! */
+                
+				
+                background-image: var(--header-image);
+                background-size: 100%;
+				align-self: center;
+				margin-bottom: 10px;
+			
+            }
+
+            /* navigation section!! */
+            #navbar {
+                height: 50px;
+                background-color: #1c1c1c;
+                /* navbar color */
+                width: 100%;
+            }
 
 
 
-.titre {
 
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	width: 40%;
+            #flex {
+                display: flex;
+            }
 
-}
+            /* this colors BOTH sidebars
+    if you want to style them separately,
+    create styles for #leftSidebar and #rightSidebar */
+            aside {
+                background-color: #ffffff;
+                width: 200px;
+                padding: 20px;
+                font-size: 22px;
+                /* this makes the sidebar text slightly smaller */
+            }
 
-main {
-	text-align: center;
-	display: block
-	
-}
 
-.flex{
-	display: flex;
-	text-align:center;
-	margin: 0 auto;
-	max-width: 800px;
+            /* this is the color of the main content area,
+    between the sidebars! */
+            main {
+                background-color: #ffffff;
+                flex: 1;
+                padding: 20px;
+                order: 2;
+				font-size: 25px;
+				text-align: center;
+				
+            }
 
-}
+            /* what's this "order" stuff about??
+    allow me to explain!
+    if you're using both sidebars, the "order" value
+    tells the CSS the order in which to display them.
+    left sidebar is 1, content is 2, and right sidebar is 3! */
+			
+			#explanation {
+				
+				font-size: 20px;
+				
+			}
+			
+			main p a {
+				color: #4B74D2;
+			}
+			
+			main p a:hover{
+				font-style: italic;
+			}
+			
+            */ #leftSidebar {
+                order: 1;
+            }
 
-.introduction {
-	margin: 10px auto;
-	max-width: 800px;
-	
-	font-family: PixelOperator;
-	text-shadow: 2px 2px 1px black;
-	color: white;
-	font-size: 26px;
-}
+            #rightSidebar {
+                order: 3;
+            }
 
-.explanation {
-	margin: 10px auto;
-	max-width: 800px;
-	
-	font-family: PixelOperator;
-	text-shadow: 2px 2px 1px black;
-	color: white;
-	font-size:20px
-}
+            footer {
 
-body {
+                height: 100px;
+                padding: 10px;
+                text-align: center;
+                /* this centers the footer text */
+				
+            }
 
-	background-color: #1C1C1C;
-    background-image:url('background/realSpinBoule.jpg');
-	background-blend-mode: ;
-	background-size:100%;
-	background-attachment:scroll;
-	background-repeat: no-repeat;
-	
-	
-}
+            h1,
+            h2,
+            h3 {
+                color: #000000;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            strong {
+                /* this styles bold text */
+                color: #000000;
+            }
+
+            /* this is just a cool box, it's the darker colored one */
+            .box {
+                background-color: #ffffff;
+                border: 2px solid #1c1c1c;
+                padding: 10px;
+            }
+
+            /* CSS for extras */
+
+            #topBar {
+                width: 100%;
+                height: 30px;
+                padding: 10px;
+                font-size: smaller;
+                background-color: #ffffff;
+            }
+			
+			#navigation  a {
+				color: #1c1c1c;
+				
+			}
+			
+			#navigation a:hover {
+				color: #4B74D2;
+			}
+
+
+            /* BELOW THIS POINT IS MEDIA QUERY */
+
+            /* so you wanna change the width of your page? 
+    by default, the container width is 900px.
+    in order to keep things responsive, take your new height,
+    and then subtrack it by 100. use this new number as the 
+    "max-width" value below
+    */
+
+            @media only screen and (max-width: 800px) {
+                #flex {
+                    flex-wrap: wrap;
+                }
+
+                aside {
+                    width: 100%;
+                }
+
+                /* the order of the items is adjusted here for responsiveness!
+      since the sidebars would be too small on a mobile device.
+      feel free to play around with the order!
+      */
+                main {
+                    order: 1;
+                }
+
+                #leftSidebar {
+                    order: 2;
+                }
+
+                #rightSidebar {
+                    order: 3;
+                }
+
+                #navbar ul {
+                    flex-wrap: wrap;
+                }
+            }

@@ -1,0 +1,83 @@
+
+            @font-face {
+                font-family: PixelOperator;
+                src: url('fonts/PixelOperator.woff');
+				font-weight: normal;
+				font-style: normal;
+            }
+
+            @font-face {
+                font-family: IBMPlexMono-Medium;
+                src: url('fonts/IBMPlexMono-Medium.woff');
+                font-weight: normal;
+				font-style: normal;
+			}
+
+            @font-face {
+                font-family: IBMPlexMono-Medium;
+                src: url('fonts/IBMPlexMono-MediumItalic.woff');
+				font-weight: normal;
+				font-style: italic;
+            }
+
+
+            body {
+                font-family: 'PixelOperator';
+                background-color: #000000;
+				
+
+                color: #1c1c1c;
+
+				
+            }
+
+			.contain {
+				max-width: 500px;
+				margin: 0 auto;
+			}
+
+			h2 {
+				color: #1c1c1c;
+			}
+			
+			h1 a{
+				text-decoration: none;
+				animation: blink 2s infinite;
+				color: #4B74D2;
+	
+			}
+			
+			@keyframes blink {
+			0% { opacity: 1; }
+			30% { opacity: 0; }
+			100% { opacity: 1; }
+			}
+				
+			
+			h1 a:hover{
+				text-decoration: none;
+				color: #ffffff;
+				background-color: #1c1c1c;
+				padding: 5px;
+				animation-play-state: paused;
+				
+			}
+			
+			#item1 {
+				background-image: url("pictures/tiredEye2.gif");
+				background-size: 35%;
+				background-repeat:no-repeat;
+				background-position: center;
+
+				height: 300px;
+
+			}
+			
+			#item2 {
+				height: 200px;
+				background-color: #ffffff;
+				text-align: center;
+				padding: 30px;
+			}
+			
+			
